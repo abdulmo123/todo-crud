@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const todoController = require('./controllers/todo.controller');
 const cors = require('cors');
 require('dotenv').config();
-const TaskModel = require('./models/tasks');
 
 app.use(cors());
 app.use(express.json());

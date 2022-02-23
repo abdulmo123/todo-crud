@@ -14,7 +14,8 @@ exports.readTask = (req, res) => {
 exports.createTask = (req, res) => {
     const todo = new TaskModel({
         task: req.body.task,
-        desc: req.body.desc
+        date: req.body.date,
+        time: req.body.time
     })
     todo.save().then(data => {
         res.send(data);

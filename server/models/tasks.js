@@ -5,10 +5,14 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    desc: {
-        type: String,
+    date: {
+        type: Date,
         required: true
     },
+    time: {
+        type: String,
+        required: true
+    }
 });
 
 const TaskModel = mongoose.model('tasks', TaskSchema);

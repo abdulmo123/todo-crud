@@ -3,10 +3,11 @@ import { useState } from 'react';
 import Axios from 'axios';
 function App() {
   const [task, setTask] = useState('');
-  const [desc, setDesc] = useState('');
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState(new Date().getTime());
 
   const createTask = () => {
-    Axios.post('http://localhost:3001/createTask', { task: task, desc: desc })
+    Axios.post('http://localhost:3001/createTask', { task: task, date: date, time: time })
       .then(() => {
         alert('it works!')
       }).catch(() => {
@@ -22,9 +23,14 @@ function App() {
           onChange={(event) => setTask(event.target.value)}
         />
         <input
-          type="text"
+          type="date"
           placeholder="Enter description of task ..."
-          onChange={(event) => setDesc(event.target.value)}
+          onChange={(event) => setDate(event.target.value)}
+        />
+        <input
+          type="time"
+          placeholder="Enter description of task ..."
+          onChange={(event) => setTime(event.target.value)}
         />
         <button onClick={createTask}>Add Task</button>
       </div>
