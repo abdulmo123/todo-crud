@@ -1,7 +1,7 @@
 .App {
   display: flex;
-  justify-content: center;
-  height: 100vh;
+  height: 100vh; 
+  flex-direction: column;
 }
 
 .inputs {
@@ -38,4 +38,26 @@ body {
 
 .inputs button:hover {
   cursor: pointer;
+}
+
+.taskList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.task {
+  width: 500px;
+  height: 60px;
+  background-color:rgb(211, 202, 165);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  margin: 10px;
+}
+
+.task h3 {
+  margin-left: 15px;
 }
