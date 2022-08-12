@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const todoController = require('./controllers/todo.controller');
-const cors = require('cors');
-require('dotenv').config();
+const mongoose = require("mongoose");
+const todoController = require("./controllers/todo.controller");
+const cors = require("cors");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -11,11 +11,13 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_CONNECTION, { useNewUrlParser: true });
 
 // app.get('/getTask', todoController.getTask);
-app.post('/createTask', todoController.createTask);
+app.post("/createTask", todoController.createTask);
 
-app.get('/readTask', todoController.readTask);
+app.get("/readTask", todoController.readTask);
 
-const PORT = process.env.PORT || 5000
+app.put("/updateTask", todoController.updateTask);
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log('listening on port 3001');
-})
+  console.log("listening on port 3001");
+});
