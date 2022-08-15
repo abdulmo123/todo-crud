@@ -38,3 +38,9 @@ exports.updateTask = (req, res) => {
   }
   res.send("updated!");
 };
+
+exports.deleteTask = (req, res) => {
+  const id = req.params.id;
+  TaskModel.findByIdAndRemove(id).exec();
+  res.send("item deleted!");
+};

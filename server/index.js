@@ -17,6 +17,8 @@ app.get("/readTask", todoController.readTask);
 
 app.put("/updateTask", todoController.updateTask);
 
+app.delete("/deleteTask/:id", todoController.deleteTask);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("listening on port 3001");

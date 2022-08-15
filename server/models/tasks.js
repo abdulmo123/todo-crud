@@ -26,13 +26,5 @@ const TaskSchema = new mongoose.Schema({
   },
 });
 
-// function formatDate(date) {
-//   const currentMonth = date.getMonth();
-//   const monthString = currentMonth >= 10 ? currentMonth : `0${currentMonth}`;
-//   const currentDate = date.getDate();
-//   const dateString = currentDate >= 10 ? currentDate : `0${currentDate}`;
-//   return `${date.getFullYear()}-${monthString}-${currentDate}`;
-// }
-
 const TaskModel = mongoose.model("tasks", TaskSchema);
 module.exports = TaskModel;

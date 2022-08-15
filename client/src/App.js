@@ -46,6 +46,17 @@ function App() {
       );
     });
   };
+
+  const deleteTask = (id) => {
+    Axios.delete(`http://localhost:3001/deleteTask/${id}`).then(() => {
+      setListOfTasks(
+        listofTasks.filter((e) => {
+          return e._id !== id;
+        })
+      );
+    });
+  };
+
   useEffect(() => {
     Axios.get("http://localhost:3001/readTask")
       .then((response) => {
@@ -92,7 +103,14 @@ function App() {
               >
                 Update
               </button>
-              <button id="removeBtn">X</button>
+              <button
+                id="removeBtn"
+                onClick={() => {
+                  deleteTask(e._id);
+                }}
+              >
+                X
+              </button>
             </div>
           );
         })}
